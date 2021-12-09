@@ -51,6 +51,24 @@ paths:
         200:
           description: See all details of the users
           content: {}
+  /users/v2:
+    get:
+      tags:
+      - v2
+      - users
+      summary: Retrieves all users - guaranteed no bugs
+      description: Displays all users with basic information
+      operationId: api_views.users.get_all_users_v2
+      parameters:
+        - name: query
+          in: query
+          description: filter the list of users with this query
+          schema:
+            type: string
+      responses:
+        200:
+          description: See basic info about all users
+          content: {}
   /users/v1/register:
     post:
       tags:
